@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client vendor Details</title>
+</head>
+<span>
+<h1>Client Details </h1>
+    {{client_obj.name}}<br>{{client_obj.project}}<hr>
+<h1>Vendor Details </h1>
+<table border="2">
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Match</th>
+    </tr></thead>
+    <tbody>
+    {% for i in vendor_obj %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.phone}}</td>
+            <td><a href="/match/{{client_obj.id}}/{{i.id}}">Match</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br><br>
+{% if messages %}
+    {% for i in messages %}
+<span style="color:green;">{{i}}</span>
+    {% endfor %}
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Contract || ExMyB</title>
+  <style type="text/css">
+            @page {
+                size:A4;
+                margin: 1cm;
+
+                @frame footer {
+                    -pdf-frame-content: footerContent;
+                    bottom: 0cm;
+                    margin-left: 9cm;
+                    margin-right: 9cm;
+                    height: 1cm;
+                }
+            }
+
+            td{
+            text-align:center;
+            height:100px;
+          }
+          th{
+          height:75px;
+          }
+        </style>
+  </head>
+  <body style="font-size:120%">
+    <header class="clearfix">
+      <div id="logo" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <img src="https://django-b2b.s3.amazonaws.com/static/images/exmyb_web_logo_white.png" style="height:50px;width:70px ;align:center;margin-left:auto;margin-right:auto">
+        <br><b>Expand My Business</b><br>
+        www.exmyb.com
+        <br><a href="mailto:nishant@exmyb.com">nishant@exmyb.com</a> | <a href="mailto:rohan@exmyb.com">rohan@exmyb.com</a> | <a href="mailto:unnat@exmyb.com">unnat@exmyb.com</a><br>
+      </div>
+      <h1 align="center">Contract</h1>
+
+  <div>
+    <b style="font-size:150%">Buyer Requirements:</b>
+    {{data | safe}}
+
+  </div>
+
+    </header>
+    <main>
+      <table border="1" >
+        <thead>
+          <tr>
+            <th style="margin:1px">PHASE</th>
+            <th>DESCRIPTION</th>
+            <th>TIMELINE (Days/Dates)</th>
+            <th>PAYMENTS</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in data_o %}
+        <tr>
+            <td>{{i.phase}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.timeline}}</td>
+            <td>{{i.payments}}</td>
+          </tr>
+        {% endfor %}
+            </tbody>
+      </table>
+  <br><br>
+      <div id="notices" >
+
+        <div><b style="text-size:125%">Terms:</b>
+        <ol>
+          <li><b>100% of the payment will be made to ExMyB (bank details given below) and be released to the vendor according to the structure decided above.</b></li>
+          <li><b>An ExMyB intermediary will be present at all times for the duration of the contract to follow through.</b></li>
+          <li><b>ExMyB holds limited liability in this contract and ExMyB's decision will be final in case if any dispute between buyer and vendor.</b></li>
+          <li><b>TDS will be deducted as applicable.</b></li>
+        </ol></div>
+      </div>
+      <div>
+        <br>
+        <b style="font-size:125%">Bank Details:</b><br>
+        <b>Manatarav Pvt Ltd<br>
+        Account Number : 50200033860862<br>
+        IFSC - HDFC0002645<br>
+          HDFC Bank,Unitech Cyber Park</b>
+      </div>
+      <br><br><br><br> _________________________<br> <b>On behalf of (company name)</b>
+    </main>
+    <footer>
+
+    </footer>
+  </body>
+</html>

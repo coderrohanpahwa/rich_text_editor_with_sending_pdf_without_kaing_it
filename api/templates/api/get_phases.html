@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Phases</title>
+</head>
+<body>
+<h1>Number of phases</h1>
+    <table border>
+        <thead>
+          <tr>
+             <th>Client -Vendor </th>
+            <th>Phase</th>
+            <th>Desciption</th>
+            <th>Timeline</th>
+            <th>Payment</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in data %}
+            <tr>
+                <td>{{i.macth}}</td>
+                <td>{{i.phase}}</td>
+                <td>{{i.description}}</td>
+                <td>{{i.timeline}}</td>
+                <td>{{i.payments}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <div id="add">
+    <label for="Phase">Phase</label>
+    <input type="text" id="Phase" placeholder="Phase No." name="phase">
+    <label for="Description">Description</label>
+    <input type="text" id="Description" placeholder="Description" name="description">
+    <label for="Timeline">Timeline</label>
+    <input type="text" id="Timeline" placeholder="Timeline" name="timeline">
+    <label for="Payments">Payments</label>
+    <input type="text" id="Payments" placeholder="Payments" name="payments">
+    </div>
+<div id="root"></div>
+
+        <input type="Submit" value="Submit">
+</form>
+<button onClick="handleClick()">+</button>
+<div id="app"></div>
+    <script>
+        function handleClick(){
+
+            document.getElementById("root").insertAdjacentHTML('beforeend', document.getElementById("add").innerHTML +"<br>")
+        }
+    </script>
+</body>
+</html>
