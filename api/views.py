@@ -50,7 +50,13 @@ class GeneratePdf(View):
 
         data={'data':obj.content,'data_o':obj_phase}
         '''This code is for only generating pdfs in a browser'''
-        pdf = render_to_pdf('pdf/index.html', data)
+        # pdf = render_to_pdf('pdf/index.html', data)
+        # pdf = render_to_pdf('pdf/index.html', data)
+
+        #pdf = render_to_pdf('pdf/aggreement.html', data)
+
+        pdf = render_to_pdf('pdf/mytemp1.html', data)
+        return render(request,'pdf/contract.html',data)
         # return HttpResponse(pdf, content_type='application/pdf')
 
         # print(type(pdf))
@@ -58,12 +64,32 @@ class GeneratePdf(View):
         # print(pdf.getvalue())
         # print(dir(pdf))
         # print(pdf)
-        mail.send('rohanpahwa1@gmail.com',
-                  'hackerrohanpahwa@gmail.com',
-                  attachments={'pdf.pdf':ContentFile(pdf.getvalue())}
-                      )
+        #mail.send(['rohanpahwa1@gmail.com'],
+        #         'hackerrohanpahwa@gmail.com',
+        #         attachments={'pdf.pdf':ContentFile(pdf.getvalue())},priority='now'
+        #             )
+        # from django.core.files.storage import FileSystemStorage
+        # # from django.http import HttpResponse
+        # from django.template.loader import render_to_string
+        # from weasyprint import HTML
+        # html_string = render_to_string('pdf/mytemp1.html')
+        # html = HTML(string=html_string)
+        # html.write_pdf(target='/tmp/mypdf.pdf')
+        # # return HttpResponse(pdf,content_type='application/pdf')
+        # fs = FileSystemStorage('/tmp')
+        # with fs.open('mypdf.pdf') as pdf:
+        #     response = HttpResponse(pdf, content_type='application/pdf')
+        #     response['Content-Disposition'] = 'attachment; filename="mypdf.pdf"'
+        #     return response
+        #
+        # return response
 
-        return HttpResponse("Sent")
+
+
+
+
+        # return HttpResponse(pdf,content_type='application/pdf')
+        # return HttpResponse("Sent")
 
 # <--------   Iske bd ka sara database design wali backchodi hai --------------------->
 
